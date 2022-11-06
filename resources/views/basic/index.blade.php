@@ -18,6 +18,7 @@
    <section>
        <div class="container">
            <div class="row">
+               <h2 class="text-center py-3">About Us </h2>
                <div class="col-md-6">
                    <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque dicta fugiat ipsum iusto, neque numquam perferendis quidem reprehenderit. Assumenda!</p>
                    <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque dicta fugiat ipsum iusto, neque numquam perferendis quidem reprehenderit. Assumenda!</p>

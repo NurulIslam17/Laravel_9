@@ -13,9 +13,9 @@ class FormValudate extends Model
     public static  function storeData($request){
         self::$validationForm = new FormValudate();
 
-        self::$validationForm->user = $request->user;
-        self::$validationForm->email = $request->email;
-        self::$validationForm->phone = $request->phone;
+        self::$validationForm->user     = $request->user;
+        self::$validationForm->email    = $request->email;
+        self::$validationForm->phone    = $request->phone;
         self::$validationForm->password = bcrypt($request->password);
 
         self::$validationForm->save();

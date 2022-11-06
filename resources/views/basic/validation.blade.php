@@ -29,11 +29,10 @@
                                 <label class="col-md-4" for="">Use Name</label>
                                 <div class="col-md-8">
                                     <input type="text" name="user" value="{{old('user')}}" class="  @error('user') is-invalid @enderror form-control rounded-0" placeholder="Enter Name">
+                                    @error('user')
+                                    <p class=" text-danger ms-auto mb-0 ">{{ $message }}</p>
+                                    @enderror
                                 </div>
-
-                                @error('user')
-                                <div class="text-center text-danger">{{ $message }}</div>
-                                @enderror
                             </div>
 
 
@@ -42,10 +41,10 @@
                                 <label class="col-md-4" for="">Use Email</label>
                                 <div class="col-md-8">
                                     <input type="email" name="email" value="{{ old('email') }}" class=" @error('email') is-invalid @enderror form-control rounded-0" placeholder="Enter Email">
+                                    @error('email')
+                                    <p class="ms-auto text-danger mb-0 ">{{ $message }}</p>
+                                    @enderror
                                 </div>
-                                @error('email')
-                                <div class="text-center text-danger">{{ $message }}</div>
-                                @enderror
                             </div>
 
 
@@ -54,11 +53,10 @@
                                 <label class="col-md-4" for="">Use Phone</label>
                                 <div class="col-md-8">
                                     <input type="text" name="phone" value="{{ old('phone')  }}" class=" @error('phone') is-invalid @enderror form-control rounded-0" placeholder="Enter Phone">
+                                    @error('phone')
+                                    <p class="ms-auto text-danger mb-0 ">{{ $message }}</p>
+                                    @enderror
                                 </div>
-
-                                @error('phone')
-                                <div class="text-center text-danger">{{ $message }}</div>
-                                @enderror
                             </div>
 
 
@@ -66,11 +64,11 @@
                                 <label class="col-md-4" for="">Use Password</label>
                                 <div class="col-md-8">
                                     <input type="password" name="password" value="{{ old('password') }}" class=" @error('password') is-invalid @enderror form-control rounded-0" placeholder="Enter Password">
-                                </div>
 
-                                @error('password')
-                                <div class="text-center text-danger">{{ $message }}</div>
-                                @enderror
+                                    @error('password')
+                                    <p class="ms-auto text-danger mb-0 ">{{ $message }}</p>
+                                    @enderror
+                                </div>
                             </div>
 
 
