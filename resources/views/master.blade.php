@@ -41,7 +41,8 @@
                     </a>
                     <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{ route('add.data') }}">Add Data</a></li>
-                        <li><a class="dropdown-item" href="{{ route('one.to.one') }}">One t one</a></li>
+                        <li><a class="dropdown-item" href="{{ route('one.to.one') }}">One -> one</a></li>
+                        <li><a class="dropdown-item" href="{{ route('one.to.many') }}">One -> many</a></li>
                     </ul>
                 </li>
 

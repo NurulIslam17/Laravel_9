@@ -10,7 +10,11 @@ Route::post('/form-validate-check',[BasicController::class,'formValidateCheck'])
 
 Route::get('/add-data',[EloquentOrmController::class,'addData'])->name('add.data');
 Route::post('/store-phone',[EloquentOrmController::class,'storePhone'])->name('store.phone');
-Route::get('/one.to.one',[EloquentOrmController::class,'oneToOne'])->name('one.to.one');
+Route::get('/one-to-one',[EloquentOrmController::class,'oneToOne'])->name('one.to.one');
+
+Route::get('/one-to-many',[EloquentOrmController::class,'oneToMany'])->name('one.to.many');
+Route::post('/store-post',[EloquentOrmController::class,'storePost'])->name('store.post');
+Route::post('/post-comment',[EloquentOrmController::class,'postComment'])->name('post.comment');
 
 Route::middleware([
     'auth:sanctum',
