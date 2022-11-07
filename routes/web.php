@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\EloquentOrmController;
 
 Route::get('/',[BasicController::class,'index'])->name('home');
 Route::get('/form-validation',[BasicController::class,'formValidation'])->name('form.validation');
 Route::post('/form-validate-check',[BasicController::class,'formValidateCheck'])->name('form.validate.check');
+
+Route::get('/add-data',[EloquentOrmController::class,'addData'])->name('add.data');
+Route::post('/store-phone',[EloquentOrmController::class,'storePhone'])->name('store.phone');
+Route::get('/one.to.one',[EloquentOrmController::class,'oneToOne'])->name('one.to.one');
 
 Route::middleware([
     'auth:sanctum',

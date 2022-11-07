@@ -16,7 +16,7 @@
 {{--Navbar--}}
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div class="container">
-        <a class="navbar-brand" href="#">BasicLv</a>
+        <a class="navbar-brand" href="{{ route('home') }}">BasicLv</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,17 +25,27 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">basic2</a>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Basic1
+                        Validation
                     </a>
                     <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{ route('form.validation') }}">Validation</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        EORM
+                    </a>
+                    <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ route('add.data') }}">Add Data</a></li>
+                        <li><a class="dropdown-item" href="{{ route('one.to.one') }}">One t one</a></li>
+                    </ul>
+                </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>

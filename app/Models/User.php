@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Phone;
 
 class User extends Authenticatable implements  MustVerifyEmail
 {
@@ -58,4 +59,11 @@ class User extends Authenticatable implements  MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // one to one with Phone Model
+
+    public  function phone()
+    {
+        return $this->hasOne(Phone::class);
+    }
 }
