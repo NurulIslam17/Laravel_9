@@ -16,6 +16,8 @@ Route::get('/one-to-many',[EloquentOrmController::class,'oneToMany'])->name('one
 Route::post('/store-post',[EloquentOrmController::class,'storePost'])->name('store.post');
 Route::post('/post-comment',[EloquentOrmController::class,'postComment'])->name('post.comment');
 
+Route::get('/many-to-many',[EloquentOrmController::class,'manyToMany'])->name('many.to.many');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

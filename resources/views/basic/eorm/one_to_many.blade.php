@@ -5,7 +5,7 @@
 @endsection
 
 @section('body')
-    <div class="container my-5">
+    <div class="container">
 
         <div class="row my-3">
             <div class="col-md-5 mx-auto">
@@ -55,12 +55,12 @@
                     <div class="card-header bg-info">
                         <h3 class="text-center">Eloquent ORM One to Many</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body mt-0 pt-0">
                         @foreach($posts as $post)
-                            <div class="row my-2">
+                            <div class="row my-1">
                                 <div class="col-md-4 border border-2">
                                     <h3>{{ $post->post_title }}</h3>
-                                    <p>
+                                    <p style="text-align: justify">
                                        {{ $post->post_desc }}
                                     </p>
 
@@ -79,12 +79,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-8 border border-2">
-                                    <div class="card card-body pt-1">
+                                <div class="col-md-8 border border-2 pt-1">
+                                    <div class="card card-body pt-0" style="background-color: #3eefe3">
                                         @foreach($post->comment as $comnt)
-                                            <div class="card card-body rounded-3 bg-info my-2">
-                                                <h5 class="text-light pb-0 mb-0">User Number {{ $comnt->id }}</h5>
-                                                <p class="pb-0 mb-0">{{ $comnt->comment_desc }}</p>
+                                            <div style="background-color: #7d7575" class="card card-body rounded-3 shadow my-2">
+                                                <h5 class="text-light pb-0 mb-0">User#{{ $comnt->id }}</h5>
+                                                <p style="font-style: italic;color: #c4d3ee;text-align: justify" class="pb-0 mb-0">{{ $comnt->comment_desc }}</p>
                                             </div>
                                         @endforeach
                                     </div>

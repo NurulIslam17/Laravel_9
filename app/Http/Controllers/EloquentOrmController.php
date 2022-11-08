@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Phone;
 use App\Models\Post;
@@ -56,5 +57,15 @@ class EloquentOrmController extends Controller
     {
         Comment::postComment($request);
         return back()->with('success','Comment is posted');
+    }
+
+    //manyToMany
+
+    public function manyToMany()
+    {
+
+        return Category::with('posts')->get();
+
+        return view('basic.eorm.many_to_many');
     }
 }

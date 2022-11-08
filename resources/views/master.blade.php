@@ -43,6 +43,7 @@
                         <li><a class="dropdown-item" href="{{ route('add.data') }}">Add Data</a></li>
                         <li><a class="dropdown-item" href="{{ route('one.to.one') }}">One -> one</a></li>
                         <li><a class="dropdown-item" href="{{ route('one.to.many') }}">One -> many</a></li>
+                        <li><a class="dropdown-item" href="{{ route('many.to.many') }}">Many -> many</a></li>
                     </ul>
                 </li>
 
@@ -64,7 +65,7 @@
 
 <section class="bg-dark mt-auto">
     <div class="container">
-        <p class="text-light text-center py-3">Developed By &copy;Nurul Islam,2022</p>
+        <h6 class="text-light text-center mb-0 py-3">Developed By &copy;Nurul Islam,2022</h6>
     </div>
 
 </section>
