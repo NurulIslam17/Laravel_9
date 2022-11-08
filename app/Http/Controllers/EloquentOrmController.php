@@ -63,9 +63,14 @@ class EloquentOrmController extends Controller
 
     public function manyToMany()
     {
+        $catePost = Category::with('posts')->get();
+        $postCate = Post::with('categories')->get();
 
-        return Category::with('posts')->get();
+//        return  $postCate;
 
-        return view('basic.eorm.many_to_many');
+        return view('basic.eorm.many_to_many',[
+            'category'=>$catePost,
+            'postData' =>$postCate,
+        ]);
     }
 }

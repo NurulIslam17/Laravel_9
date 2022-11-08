@@ -5,81 +5,71 @@
 @endsection
 
 @section('body')
+
     <div class="container my-5">
 
-        <div class="row">
+        <div class="row mb-4">
             <div class="col">
-                <div class="card">
+                <div class="card ">
                     <div class="card-header bg-info">
                         <h3 class="text-center">Eloquent ORM many to many</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table border border-2 table-striped hover">
-                            <thead class="thead-dark">
-                            <tr class="bg-warning">
-                                <th scope="col">SL</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-{{--                            @foreach($users as $user)--}}
-                                <tr>
-                                    <th scope="row">gh</th>
-                                    <td>ffgh</td>
-                                    <td>fgfh</td>
-                                    <td>fv f f</td>
-                                    <td>cdv f f .</td>
-                                </tr>
-{{--                            @endforeach--}}
+                        @foreach($category as $val)
+                            <div class="row border border-2 m-3">
+                                <div class="col-md-4">
+                                    <h4>Category</h4>
+                                    <hr>
+                                    <p>Category Id: {{ $val->id }}</p>
+                                    <p>Category name: {{ $val->name }}</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Posts</h4>
+                                    @foreach($val->posts as $p)
+                                        <p>Post Id : {{ $p->id }}</p>
+                                        <p>Post Title : {{ $p->post_title }}</p>
+                                        <hr>
+                                    @endforeach
 
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-
-        <div class="row">
+        <div class="row mb-4">
             <div class="col">
-                <div class="card">
+                <div class="card ">
                     <div class="card-header bg-info">
                         <h3 class="text-center">Eloquent ORM many to many</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table border border-2 table-striped hover">
-                            <thead class="thead-dark">
-                            <tr class="bg-warning">
-                                <th scope="col">SL</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {{--                            @foreach($users as $user)--}}
-                            <tr>
-                                <th scope="row">gh</th>
-                                <td>ffgh</td>
-                                <td>fgfh</td>
-                                <td>fv f f</td>
-                                <td>cdv f f .</td>
-                            </tr>
-                            {{--                            @endforeach--}}
+                        @foreach($postData as $val)
+                            <div class="row border border-2 m-3">
+                                <div class="col-md-4">
+                                    <h4>Post</h4>
+                                    <hr>
+                                    <p>Post Id: {{ $val->id }}</p>
+                                    <p>Post name: {{ $val->post_title }}</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Categories</h4>
+                                    @foreach($val->categories as $p)
+                                        <p>Category Id : {{ $p->id }}</p>
+                                        <p>Category Name : {{ $p->name }}</p>
+                                        <hr>
+                                    @endforeach
 
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-
 
     </div>
 @endsection
