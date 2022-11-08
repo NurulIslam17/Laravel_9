@@ -18,6 +18,11 @@ Route::post('/post-comment',[EloquentOrmController::class,'postComment'])->name(
 
 Route::get('/many-to-many',[EloquentOrmController::class,'manyToMany'])->name('many.to.many');
 
+Route::get('/has-one-through',[EloquentOrmController::class,'hasOneThrough'])->name('has.one.through');
+Route::post('/add-mechanic',[EloquentOrmController::class,'addMachanic'])->name('add.machanic');
+Route::post('/add-car',[EloquentOrmController::class,'addCar'])->name('add.car');
+Route::post('/add-owner',[EloquentOrmController::class,'addOwner'])->name('add.owner');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Machanic;
+use App\Models\Owner;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\User;
@@ -21,7 +24,7 @@ class EloquentOrmController extends Controller
     //storePhone
     public function storePhone(Request $request)
     {
-//       return $request;
+        //return $request;
         Phone::saveData($request);
         return back()->with('success','Phone Stored Successfully');
     }
@@ -30,7 +33,7 @@ class EloquentOrmController extends Controller
     public function oneToOne()
     {
 
-//        return User::find(2)->phone;
+        //return User::find(2)->phone;
 
         return view('basic.eorm.one_to_one',[
             'users' => User::all(),
@@ -71,6 +74,41 @@ class EloquentOrmController extends Controller
         return view('basic.eorm.many_to_many',[
             'category'=>$catePost,
             'postData' =>$postCate,
+        ]);
+    }
+
+    //hasOneThrough
+
+    public function addMachanic(Request $request)
+    {
+        //return $request;
+
+        Machanic::storeMachanic($request);
+        return back()->with('success','New Mechanic Added');
+    }
+
+    public function addCar(Request $request)
+    {
+        //return $request;
+        Car::storeCar($request);
+        return  back()->with('success','New Car Added');
+    }
+
+    public function addOwner(Request $request)
+    {
+        //return $request;
+        Owner::storeOwner($request);
+        return  back()->with('success','New Owner Added');
+    }
+
+    public function hasOneThrough()
+    {
+        $mechanicOwner = Machanic::with('carOwner')->get();
+
+        return view('basic.eorm.has-one-through',[
+            'mechanics' => Machanic::get(),
+            'cars' => Car::get(),
+            'mechanicOwners' => $mechanicOwner,
         ]);
     }
 }
