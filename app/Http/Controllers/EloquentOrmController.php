@@ -103,7 +103,8 @@ class EloquentOrmController extends Controller
 
     public function hasOneThrough()
     {
-        $mechanicOwner = Machanic::with('carOwner')->get();
+//       return Machanic::with('carOwner','cars')->get();
+        $mechanicOwner = Machanic::with('carOwner','cars')->get();
 
         return view('basic.eorm.has-one-through',[
             'mechanics' => Machanic::get(),

@@ -15,7 +15,7 @@
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#machanic" type="button" role="tab" aria-controls="machanic" aria-selected="false">Machanic</button>
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#machanic" type="button" role="tab" aria-controls="machanic" aria-selected="false">Mechanic</button>
                     </li>
 
                     <li class="nav-item" role="presentation">
@@ -203,8 +203,8 @@
                     <tbody>
                     @foreach($mechanicOwners as $mechanicOwner)
                         <tr>
-                            <td>{{ $mechanicOwner->car->car_name }}</td>
-                            <td>{{ $mechanicOwner->carOwner->owner_name}}</td>
+                            <td>{{ $mechanicOwner->cars->car_name }}</td>
+                            <td>{{ $mechanicOwner->carOwner->owner_name }}</td>
                             <td>{{ $mechanicOwner->machanic_name }}</td>
                             <td>{{ $mechanicOwner->machanic_phone }}</td>
 

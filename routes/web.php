@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\EloquentOrmController;
+use App\Http\Controllers\MessageController;
 
 Route::get('/',[BasicController::class,'index'])->name('home');
 Route::get('/form-validation',[BasicController::class,'formValidation'])->name('form.validation');
@@ -22,6 +23,11 @@ Route::get('/has-one-through',[EloquentOrmController::class,'hasOneThrough'])->n
 Route::post('/add-mechanic',[EloquentOrmController::class,'addMachanic'])->name('add.machanic');
 Route::post('/add-car',[EloquentOrmController::class,'addCar'])->name('add.car');
 Route::post('/add-owner',[EloquentOrmController::class,'addOwner'])->name('add.owner');
+
+
+
+Route::get('/send-message',[MessageController::class,'sendMessage'])->name('send.message');
+Route::post('/send/to/user',[MessageController::class,'sendToUser'])->name('send.to.user');
 
 Route::middleware([
     'auth:sanctum',

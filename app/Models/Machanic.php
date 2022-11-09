@@ -26,7 +26,7 @@ class Machanic extends Model
         return $this->hasOneThrough(Owner::class, Car::class);
     }
 
-    public function car()
+    public function cars()
     {
         return $this->hasOne(Car::class);
     }
