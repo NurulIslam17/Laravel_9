@@ -18,13 +18,13 @@
                         <form action="{{ route('send.to.user') }}" method="post">
                             @csrf
 
-                            <p>{{ Session::get('success') }}</p>
+                            <p class="text-success">{{ Session::get('success') }}</p>
                             <div class="row mb-3">
 
                                 <div class="col-md-12">
-                                <textarea name="user_message" class="form-control rounded-0 m-0 p-3" placeholder="Message here..." id="" cols="30" rows="4">
+                                    <textarea name="user_message" id="summernote" class="form-control rounded-0 m-0 p-3" placeholder="Message here..." cols="30" rows="4">
 
-                                </textarea>
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">

@@ -16,7 +16,7 @@ class MessageController extends Controller
     {
 
         $validated = $request->validate([
-            'user_number' => 'required|max:11|min:11',
+            'user_number' => 'required|max:15|min:11',
         ]);
 
         $number = $request->user_number;
@@ -32,6 +32,6 @@ class MessageController extends Controller
 
 
 
-        return back()->with('success','Number is sent to '.$number);
+        return back()->with('success','Message is sent to '.$number);
     }
 }
